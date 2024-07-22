@@ -8,7 +8,7 @@ public class Substractor implements Callable<Void> {
     }
 
     public Void call() throws Exception{
-        for(int i=1; i<=10; i++){
+        for(int i=1; i<=100; i++){
             count.value -= i;
         }
         return null;

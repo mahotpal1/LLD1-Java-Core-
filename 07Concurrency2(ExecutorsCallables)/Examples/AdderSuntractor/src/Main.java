@@ -6,12 +6,10 @@ import java.util.concurrent.Future;
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         MaintainCount count = new MaintainCount();
-        Adder adder = new Adder(count);
-        Substractor substractor = new Substractor(count);
         ExecutorService ex = Executors.newCachedThreadPool();
 
-        Future<Void> future1 = ex.submit(adder);
-        Future<Void> future2 = ex.submit(substractor);
+        Future<Void> future1 = ex.submit(new Adder(count));
+        Future<Void> future2 = ex.submit(new Substractor(count));
 
         future1.get();
         future2.get();

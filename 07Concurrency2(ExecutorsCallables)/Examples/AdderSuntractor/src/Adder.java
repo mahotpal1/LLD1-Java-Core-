@@ -8,7 +8,7 @@ public class Adder implements Callable<Void> {
     }
 
     public Void call() throws Exception {
-        for(int i=1; i<=10; i++){
+        for(int i=1; i<=100; i++){
             count.value += 1;
         }
         return null;
